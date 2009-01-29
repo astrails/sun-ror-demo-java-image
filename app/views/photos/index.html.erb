@@ -14,9 +14,7 @@
     <td><%=h photo.description %></td>
     <td><%=h photo.content_type %></td>
     <td><%=h photo.filename %></td>
-    <td><%= image_tag("/photos/code_image/#{photo.id}", :alt => "Image") %></td>
-    <td><%= image_tag("/photos/bwimage/#{photo.id}", :alt => "Image") %></td>
-
+    <td><%= image_tag(formatted_photo_path(photo, "jpg"), :alt => photo.filename) %></td>
 
     <td><%= link_to 'Show', photo %></td>
     <td><%= link_to 'Edit', edit_photo_path(photo) %></td>

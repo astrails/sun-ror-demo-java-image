@@ -14,10 +14,14 @@
 </p>
 
 <p>
-  <b>Binary data:</b>
-  <%= image_tag("/photos/code_image/#{@photo.id}", :alt => "Image") %>
+  <b>Image:</b>
+  <%= image_tag(formatted_photo_path(@photo, "jpg"), :alt => @photo.filename) %>
 </p>
 
+<p>
+  <b>BW Image:</b>
+  <%= image_tag(formatted_photo_path(@photo, "jpg", :bw=>true), :alt => @photo.filename) %>
+</p>
 
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
